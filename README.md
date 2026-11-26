@@ -67,6 +67,20 @@ This was my first tool, and it went through four versions in eight months.
 
 **Dairy stock take (21 Sep → 1 Nov).** Dairy needs batch and expiry counts. I first built it as a shared tool with admin and staff views and a zero-count flag. Then I rebuilt it inside PriceLynk as a module that works offline on the device, makes batch codes per product and expiry, and exports PDF and CSV grouped by expiry.
 
+**Versions**
+
+| Version | Date | What changed | Why |
+| --- | --- | --- | --- |
+| v1 | 10 Mar | Single HTML file: CSV import, camera scan, variance report | Free stock take from Cin7 data |
+| v2 | Mar | Moved data to Supabase; batched uploads, paged reads, 4 barcodes per product | 18,123-product upload failed; extra barcodes were in attribute columns |
+| v3 | Mar | ZXing scanner, offline-first saving with auto sync, slower admin polling | Nothing scanned on iPhone; scans lost on bad Wi-Fi; free-tier request limit |
+| v4 | 21 Sep | Dairy stock take: batch and expiry counts, zero-count flag, admin/staff views | Dairy needs counts per batch and expiry |
+| v5 | 1 Nov | Dairy module rebuilt inside PriceLynk, offline on device, PDF/CSV by expiry | One place for staff tools; no extra database cost |
+
+![Dairy stock take — count and variance screen](screenshots/dairy-stock-take.png)
+
+*Dairy stock take (v4), staff count screen, shown with no data loaded.*
+
 Live: [somesh142.github.io/Stock-Take](https://somesh142.github.io/Stock-Take)
 
 ## Price tags and PriceLynk
@@ -94,6 +108,17 @@ This is my biggest system: it started as a printer that wouldn't print and is no
 - settings to add other businesses, in case I offer PriceLynk as a subscription
 
 The Netlify drag-and-drop deploy also fixed phones that couldn't reach the API when the page was opened as a downloaded file.
+
+**Versions**
+
+| Version | Date | Platform | What changed | Why |
+| --- | --- | --- | --- | --- |
+| v1 | Apr | Python + Epson USB | Direct ESC/POS print server for shelf tags | Windows spooler kept failing (Error 87) |
+| v2 | 29 Apr | GitHub + Netlify | Staff printer + 4 customer price-check pages; daily Cin7 export | Staff and customers needed prices on any device |
+| v3 | mid-2026 | Firebase | Admin upload, staff printer, customer checker, report, central hub | One system instead of manual uploads to GitHub |
+| v3.1 | 14 Sep | Firebase | 5th outlet (Cranbourne), forced full rewrite | New store; existing products missed the new price column |
+| v3.2 | Nov | Firebase | Camera scanner (ZXing), barcode matching, promo and combo tags | iPhone scanning failed; staff needed sale tags |
+| v4 | 23 Nov | Apps Script + Sheets | Rebuilt database, admin portal, staff printer; latest-price list, print tracking, live Cin7 option | Hit Firebase's free daily read limit; reprinting changed-back prices |
 
 ## Online store (srimuruganonline.com)
 
@@ -135,6 +160,20 @@ Every container gets split across the outlets. I went from spreadsheets to a tap
 
 **Mistakes I caught:** at one point product data was filled in from memory instead of the uploaded PDF. I threw that work out and had it redone from the actual file. I also flagged products showing over-allocation even though marked "Done".
 
+**Versions**
+
+| Version | Date | What changed | Why |
+| --- | --- | --- | --- |
+| v1 | 7 Jul | Offline HTML tally from the invoice, +/− per outlet, CSV export | Unloading was tracked on paper |
+| v1.1 | 7 Jul | Suggested quantities instead of % labels; typed inputs | Staff needed numbers, not ratios; tapping +1 was too slow |
+| v2 | Nov | Tried Excel layouts, simplified twice | Testing whether a sheet was enough |
+| v3 | Nov | Shared tally with cloud storage, carton + piece inputs, PDF, "New list" import, manual products | Several people unload at once; each shipment is a new list |
+| v4 | Nov | React + TypeScript + Supabase app with roles and invite-only users | A production version for long-term use |
+
+![Unload & Split Tally on a phone](screenshots/unload-split-tally-phone.png)
+
+*Outlet Split Tally (v3) on a phone, before unloading starts.*
+
 ## Membership tools
 
 - **Membership points page (22 March).** A prototype that looks up a customer's Cin7 loyalty and purchases by phone number, through a small backend so API keys never sit in the browser.
@@ -153,6 +192,10 @@ In November I started building tools that do the manual work themselves, with a 
 - every rejection is saved as a lesson for future training
 
 13 automated tests cover rounding, pack-size matching, risk flags and approval guards. When it first failed to start on my PC (port in use, browser opening too early), I fixed the launcher to fall back to another port and show clear errors.
+
+![SMT JARVIS operations dashboard](screenshots/jarvis-dashboard.png)
+
+*SMT JARVIS dashboard in demo mode. All figures shown are generated sample data, not real sales.*
 
 ## What I learned
 
