@@ -109,6 +109,17 @@ This is my biggest system: it started as a printer that wouldn't print and is no
 
 The Netlify drag-and-drop deploy also fixed phones that couldn't reach the API when the page was opened as a downloaded file.
 
+<table>
+<tr>
+<td width="50%"><img src="screenshots/price-check-netlify-phone.jpg" alt="Customer price check page on Netlify"></td>
+<td width="50%"><img src="screenshots/connect-page-phone.jpg" alt="Customer connect page on Firebase"></td>
+</tr>
+<tr>
+<td><em>v2 (April): customer price-check page for Point Cook, scanned at the in-store kiosk.</em></td>
+<td><em>v3.1 (September): customer page on Firebase with the online shop, social links and all five stores.</em></td>
+</tr>
+</table>
+
 **Versions**
 
 | Version | Date | Platform | What changed | Why |
@@ -136,6 +147,25 @@ I built the online store on Shopify's Dawn theme with about 12,000 products sync
 **Mobile app (13 September).** The OneMobile app showed only 1–2 products. I ruled out search apps and permissions and worked through bulk-publishing all 12,000 SKUs to the channel.
 
 **Later work (November).** Homepage redesign on a copy of the theme, an image standard of white background at 1000×1000 with an "Image coming soon" fallback, and Pooja perishables for pre-order.
+
+<table>
+<tr>
+<td width="62%"><img src="screenshots/online-store-desktop.jpg" alt="srimuruganonline.com on desktop"></td>
+<td width="38%"><img src="screenshots/online-store-phone.jpg" alt="srimuruganonline.com on a phone"></td>
+</tr>
+<tr>
+<td colspan="2"><em>srimuruganonline.com today, desktop and phone. See it live: <a href="https://srimuruganonline.com">srimuruganonline.com</a></em></td>
+</tr>
+</table>
+
+**Versions**
+
+| Version | Date | What changed | Why |
+| --- | --- | --- | --- |
+| v1 | 26 Jun | Dawn homepage: announcement bar, dark header, hero, category row, promo grid, store locations | Launch the online store with ~12,000 Cin7 products |
+| v1.1 | Jun | Back to Dawn's own header; cleaned broken section references; horizontal category row | Sidekick header broke search; schema errors; row scrolled the wrong way |
+| v1.2 | 13 Sep | Bulk-published all SKUs to the mobile app channel | App showed only 1–2 products |
+| v2 | Nov | Homepage redesign on a theme copy, image standard, Pooja pre-orders | Cleaner look without touching the live theme |
 
 ## Aging, expiry and stock transfer tools
 
