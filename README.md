@@ -41,7 +41,6 @@ Newest first.
 | 21 Sep | Dairy stock-take tool | Admin and staff views with variance report |
 | 14 Sep | PriceLynk 5th outlet | Added Cranbourne to admin upload and staff printer; built the /connect page |
 | 13 Sep | Online store mobile app | Fixed the mobile app showing 1–2 of 12,000 products |
-| 3 Sep | iMin POS + thermal printer | Got the Android POS printing to the TM-T82X through RawBT |
 | 7 Jul | Unload tally (offline HTML) | Turned a 333-line invoice into a tap-to-tally app |
 | 5 Jul | Power BI expiry dashboard | Star schema, 6 input tables, 17 DAX measures |
 | 1 Jul | Aging Stock Transfer Planner | React tool over a 7,066-SKU aging report with transfer history |
@@ -144,8 +143,6 @@ Every container gets split across the outlets. I went from spreadsheets to a tap
 ## Automation and AI agents
 
 In November I started building tools that do the manual work themselves, with a person always approving before anything changes in Cin7.
-
-**POS printing (3 September).** The iMin Swan 2 Android POS wouldn't work with Epson's own apps. I got it printing to the TM-T82X through RawBT, and worked out that direct ESC/POS commands are the fast path for PriceLynk.
 
 **SMT JARVIS (21 November).** My goal: an assistant I can teach my own pricing and re-ordering judgement. Design decisions:
 
